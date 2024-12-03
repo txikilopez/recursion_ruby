@@ -2,6 +2,8 @@
 def merge(left_ar = [], right_ar = [], output_arr = [])
   if right_ar.nil?
     right_ar = []
+  # elsif left_ar.nil?
+  #   left_ar = []
   end
   left_len = left_ar.length - 1
   right_len = right_ar.length - 1
@@ -31,7 +33,6 @@ end
 def merge_sort(array)
   arr_length = array.length - 1
   # p "top #{arr_length}"
-
   if arr_length > 1
     left = array[0..arr_length/2]
     right = array[arr_length/2+1..-1]
@@ -47,7 +48,9 @@ def merge_sort(array)
 end
 
 a = [3, 2, 1, 13, 8, 5, 0, 1,123]
+puts "Array a: #{a} sorted is:"
 p merge_sort(a)
 
-b = [105,79,100,2]
+b = [105, 79, 100, 110]
+puts "\nArray b: #{b} sorted is:"
 p merge_sort(b)
