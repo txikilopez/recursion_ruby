@@ -41,5 +41,20 @@ def fibs_recur(n, output_arr = [], x = 0)
   output_arr
 end
 
-p fibs(10)
-p fibs_recur(10)
+
+
+def looked_up_solution(n)
+  if n == 1
+    return [0]
+  end
+  if n == 2
+    return [0,1]
+  end
+
+  fibo_seq = looked_up_solution(n-1)
+  fibo_seq << fibo_seq[-1] + fibo_seq[-2]
+end
+
+puts "iteration method: #{fibs(10)}"
+puts "recursive method: #{fibs_recur(10)}"
+puts "recursive method: #{looked_up_solution(10)}"
