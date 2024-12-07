@@ -34,9 +34,9 @@
 
 def better_merge(left_ar, right_ar)
   merged_ar = []
-  if right_ar.nil?
-    right_ar = []
-  end 
+  # if right_ar.nil?
+  #   right_ar = []
+  # end 
   
   while !left_ar.empty? && !right_ar.empty? #Notice the not
     if left_ar[0] < right_ar[0]
@@ -56,16 +56,17 @@ def merge_sort(array)
   if arr_length >= 1
     left_ar = merge_sort(array[0..arr_length/2])
     right_ar = merge_sort(array[arr_length/2+1..-1])
-      # p "left: #{left}, right: #{right}"
     better_merge(left_ar,right_ar)
-        # p "left: #{left_ar}, right: #{right_ar}"
   else
     array
-
   end
 end
 
-a = [6, 4, 2, 1, 1, 1]
+test = [3,2,1]
+puts "array test: #{test} sorted is:"
+p merge_sort(test)
+
+a = [6, 4, 2, 1, 1, 1, 1]
 puts "Array a: #{a} sorted is:"
 p merge_sort(a)
 
